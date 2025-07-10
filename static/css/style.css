@@ -1,0 +1,211 @@
+/* Reset e base */
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #1b0a3f, #3d1f6e);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.player {
+  background: linear-gradient(145deg, #2f1e54, #190837);
+  border-radius: 25px;
+  box-shadow: 0 0 25px #5a3e85;
+  padding: 30px 30px 50px;
+  width: 320px;
+  text-align: center;
+  position: relative;
+}
+
+/* Top bar col bottone a destra */
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.menu-btn {
+  background: transparent;
+  border: none;
+  color: #cdb9ff;
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.menu-btn:hover {
+  color: #a48ee8;
+}
+
+img#cover {
+  border-radius: 20px;
+  box-shadow: 0 0 20px #5a3e85;
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+h2#title {
+  font-size: 1.5em;
+  margin: 5px 0 0;
+  color: #d1c6f9;
+}
+
+h3#artist {
+  font-size: 1.1em;
+  margin: 0 0 20px;
+  color: #9a87c7;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.controls button {
+  background: transparent;
+  border: none;
+  color: #cdb9ff;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 6px 10px;
+  border-radius: 50%;
+}
+
+.controls button:hover,
+.controls button.active {
+  color: #a48ee8;
+  background: rgba(164, 142, 232, 0.15);
+}
+
+.progress-container {
+  background: #2a1a5c;
+  height: 6px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.progress {
+  background: #a48ee8;
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+  transition: width 0.1s linear;
+}
+
+.time-container {
+  font-size: 0.9em;
+  color: #b8aaf7;
+  margin-bottom: 10px;
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  width: 320px;
+  max-height: 400px;
+  background: rgba(25, 8, 55, 0.9);
+  box-shadow: 0 4px 16px rgba(90, 62, 133, 0.7);
+  border-radius: 15px;
+  padding: 15px;
+  overflow-y: auto;
+  z-index: 20;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+}
+
+#search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 1em;
+  background: #3a246a;
+  color: #ddd;
+}
+
+#search-input::placeholder {
+  color: #bbaeee;
+}
+
+.menu-section h4 {
+  margin: 10px 0 8px;
+  font-weight: 600;
+  color: #c9bff7;
+  border-bottom: 1px solid #5a3e85;
+  padding-bottom: 4px;
+}
+
+.song-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 10px;
+  max-height: 110px;
+  overflow-y: auto;
+}
+
+.song-list li {
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: #d0c4fa;
+}
+
+.song-list li:hover {
+  background-color: #5a3e85;
+}
+
+/* Scrollbar personalizzata */
+.song-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.song-list::-webkit-scrollbar-track {
+  background: #2a1a5c;
+  border-radius: 10px;
+}
+
+.song-list::-webkit-scrollbar-thumb {
+  background: #a48ee8;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .player {
+    width: 95vw;
+    padding: 20px;
+  }
+
+  img#cover {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .dropdown {
+    width: 90vw;
+    right: 5vw;
+    top: 45px;
+  }
+}
