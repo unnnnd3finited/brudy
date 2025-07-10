@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Music Player</title>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+  <div class="player">
+    <div class="top-bar">
+      <button id="menu-btn" class="menu-btn" title="Apri menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <img
+      id="cover"
+      src="gifs/rNgkpbhZJUa.gif"
+      alt="Immagine animata"
+      width="280"
+      height="280"
+    />
+    <h2 id="title">Titolo Canzone</h2>
+    <h3 id="artist">Artista</h3>
+
+    <div class="controls">
+      <button id="shuffle" title="Shuffle">
+        <i class="fas fa-random"></i>
+      </button>
+      <button id="prev" title="Precedente">
+        <i class="fas fa-step-backward"></i>
+      </button>
+      <button id="play" title="Play/Pausa">
+        <i class="fas fa-play"></i>
+      </button>
+      <button id="next" title="Successiva">
+        <i class="fas fa-step-forward"></i>
+      </button>
+      <button id="repeat" title="Ripeti">
+        <i class="fas fa-redo"></i>
+      </button>
+    </div>
+
+    <div id="progress-container" class="progress-container" title="Seek">
+      <div id="progress" class="progress"></div>
+    </div>
+
+    <div class="time-container">
+      <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+    </div>
+
+    <div id="dropdown" class="dropdown hidden">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Cerca canzoni..."
+        autocomplete="off"
+      />
+      <div class="menu-section">
+        <h4>Più ascoltate</h4>
+        <ul id="most-listened" class="song-list"></ul>
+      </div>
+      <div class="menu-section">
+        <h4>Sessioni settimanali</h4>
+        <ul id="weekly-sessions" class="song-list"></ul>
+      </div>
+      <div class="menu-section">
+        <h4>Preferiti</h4>
+        <ul id="favorites" class="song-list"></ul>
+      </div>
+      <div class="menu-section">
+        <h4>Tutte le canzoni</h4>
+        <ul id="all-songs" class="song-list"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="static/js/script.js"></script>
+</body>
+</html>
